@@ -2,8 +2,6 @@ package lab1;
 
 import java.security.SecureRandom;
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
 import org.apache.log4j.Logger;
 
 public class DeleteRepeatableNumbers {
@@ -31,8 +29,26 @@ public class DeleteRepeatableNumbers {
     }
 
     private static Integer[] deleteRepeatableNumbers(Integer[] array) {
-        Set<Integer> numbersSet = new HashSet(Arrays.asList(array));
-        return numbersSet.toArray(new Integer[0]);
+        int n = LENGTH;
+
+        for (int i = 0, m = 0; i != n; i++, n = m) {
+            for (int j = m = i + 1; j != n; j++) {
+                if (array[j] != array[i]) {
+                    if (m != j) {
+                        array[m] = array[j];
+                    }
+                    m++;
+                }
+            }
+        }
+
+        if (n != array.length) {
+            Integer[] b = new Integer[n];
+            System.arraycopy(array, 0, b, 0, n);
+            array = b;
+        }
+
+        return array;
     }
 
     private static void outputArray(Integer[] array) {
