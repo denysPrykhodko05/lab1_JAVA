@@ -1,22 +1,13 @@
 package lab1;
 
 import java.util.Random;
-import org.apache.log4j.Logger;
 
 public class FindingDiffNumbersInMatrix {
 
-    private static final Logger LOGGER = Logger.getLogger(FindingDiffNumbersInMatrix.class);
-    private static final int ROWS = 5;
-    private static final int COLUMNS = 6;
+    private final int ROWS = 5;
+    private final int COLUMNS = 6;
 
-
-    public static void main(String[] args) {
-        int[][] matrix = createMatrix();
-        int diff = searchAmountOfEvenNumbersInColumn(matrix) - searchAmountOfEvenNumbersInRow(matrix);
-        LOGGER.info("Diff between sum even numbers in rows and columns equal: " + (diff));
-    }
-
-    private static int[][] createMatrix() {
+    public int[][] createMatrix() {
         Random random = new Random();
         int[][] matrix = new int[ROWS][COLUMNS];
         for (int i = 0; i < ROWS; i++) {
@@ -27,7 +18,7 @@ public class FindingDiffNumbersInMatrix {
         return matrix;
     }
 
-    private static int searchAmountOfEvenNumbersInRow(int[][] matrix) {
+    public int searchAmountOfEvenNumbersInRow(int[][] matrix) {
         int sum = 0;
 
         for (int i = 0; i < ROWS; i++) {
@@ -41,7 +32,7 @@ public class FindingDiffNumbersInMatrix {
         return sum;
     }
 
-    private static int searchAmountOfEvenNumbersInColumn(int[][] matrix) {
+    public int searchAmountOfEvenNumbersInColumn(int[][] matrix) {
         int sum = 0;
         for (int i = 0; i < COLUMNS; i++) {
             for (int j = 0; j < ROWS; j++) {

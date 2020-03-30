@@ -7,17 +7,9 @@ import org.apache.log4j.Logger;
 public class DeleteRepeatableNumbers {
 
     private static final Logger LOGGER = Logger.getLogger(DeleteRepeatableNumbers.class);
-    private static final int LENGTH = 10;
+    private final int LENGTH = 10;
 
-    public static void main(String[] args) {
-        Integer[] array = createArray();
-        outputArray(array);
-        array = deleteRepeatableNumbers(array);
-        LOGGER.info("\n\nWithout repeat:");
-        outputArray(array);
-    }
-
-    private static Integer[] createArray() {
+    public Integer[] createArray() {
         SecureRandom secureRandom = new SecureRandom();
         Integer[] array = new Integer[LENGTH];
 
@@ -28,7 +20,7 @@ public class DeleteRepeatableNumbers {
         return array;
     }
 
-    private static Integer[] deleteRepeatableNumbers(Integer[] array) {
+    public Integer[] deleteRepeatableNumbers(Integer[] array) {
         int n = LENGTH;
 
         for (int i = 0, m = 0; i != n; i++, n = m) {
@@ -51,7 +43,7 @@ public class DeleteRepeatableNumbers {
         return array;
     }
 
-    private static void outputArray(Integer[] array) {
+    public void outputArray(Integer[] array) {
         Arrays.stream(array).forEach(LOGGER::info);
     }
 }
