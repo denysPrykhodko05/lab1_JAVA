@@ -1,16 +1,16 @@
-import static org.junit.jupiter.api.Assertions.assertEquals;
+package lab2;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Iterator;
 import java.util.List;
-import lab2.ListImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class ListImplTest {
-
     @Test
     void sizeShouldBeZero() {
-        ListImpl list = new ListImpl();
+        List<Integer> list = new ListImpl<>();
 
         int expected = 0;
         int actual = list.size();
@@ -20,7 +20,7 @@ class ListImplTest {
 
     @Test
     void listShouldBeEmpty() {
-        ListImpl list = new ListImpl();
+        List<Integer> list = new ListImpl<>();
 
         boolean expected = true;
         boolean actual = list.isEmpty();
@@ -30,7 +30,7 @@ class ListImplTest {
 
     @Test
     void listShouldContainTelephone() {
-        ListImpl list = new ListImpl();
+        List<Integer> list = new ListImpl<>();
         list.add(1);
 
         boolean expected = true;
@@ -41,7 +41,7 @@ class ListImplTest {
 
     @Test
     void hasNextShouldReturnFalse() {
-        ListImpl list = new ListImpl();
+        List<Integer> list = new ListImpl<>();
 
         boolean expected = false;
         boolean actual = list.iterator().hasNext();
@@ -51,7 +51,7 @@ class ListImplTest {
 
     @Test
     void nextShouldRetrunTelephone() {
-        ListImpl<Integer> list = new ListImpl();
+        List<Integer> list = new ListImpl<>();
         list.add(1);
 
         Integer expected = 1;
@@ -62,9 +62,9 @@ class ListImplTest {
 
     @Test
     void removeShouldRemoveOneElement() {
-        ListImpl list = new ListImpl();
+        List<Integer> list = new ListImpl<>();
         list.add(1);
-        Iterator it = list.iterator();
+        Iterator<Integer> it = list.iterator();
         it.remove();
 
         int expected = 0;
@@ -75,7 +75,7 @@ class ListImplTest {
 
     @Test
     void shouldAddTelephone() {
-        ListImpl list = new ListImpl();
+        List<Integer> list = new ListImpl<>();
 
         boolean actual = list.add(1);
         boolean expected = true;
@@ -85,7 +85,7 @@ class ListImplTest {
 
     @Test
     void shouldAddNoteBookIntoSpecifiedPosition() {
-        ListImpl list = new ListImpl();
+        List<Integer> list = new ListImpl<>();
         list.add(1);
         list.add(2);
         list.add(3);
@@ -99,7 +99,7 @@ class ListImplTest {
 
     @Test
     void listShouldIncreaseHisSize() {
-        ListImpl list = new ListImpl();
+        List<Integer> list = new ListImpl<>();
         for (int i = 0; i < 9; i++) {
             list.add(1);
         }
@@ -114,7 +114,7 @@ class ListImplTest {
 
     @Test
     void removeShouldReturnTrue() {
-        ListImpl list = new ListImpl();
+        List<Integer> list = new ListImpl<>();
         list.add(1);
 
         boolean expected = true;
@@ -137,7 +137,7 @@ class ListImplTest {
 
     @Test
     void getShouldReturnIndexOutOfBoundsException() {
-        ListImpl list = new ListImpl();
+        List<Integer> list = new ListImpl<>();
         list.add(1);
 
         Assertions.assertThrows(IndexOutOfBoundsException.class, () -> {
@@ -147,7 +147,7 @@ class ListImplTest {
 
     @Test
     void toArrayShouldReturnTrue() {
-        ListImpl list = new ListImpl();
+        List<Integer> list = new ListImpl<>();
 
         int actual = list.toArray().length;
         int expected = 10;
@@ -157,8 +157,8 @@ class ListImplTest {
 
     @Test
     void containsAllShouldReturnTrue() {
-        ListImpl list = new ListImpl();
-        ListImpl list2 = new ListImpl();
+        List<Integer> list = new ListImpl<>();
+        List<Integer> list2 = new ListImpl<>();
         list.add(1);
         list.add(1);
         list.add(2);
@@ -175,8 +175,8 @@ class ListImplTest {
 
     @Test
     void addAllShouldAddAll() {
-        ListImpl list = new ListImpl();
-        ListImpl list2 = new ListImpl();
+        List<Integer> list = new ListImpl<>();
+        List<Integer> list2 = new ListImpl<>();
         list.add(1);
         list.add(1);
         list.add(2);
@@ -196,8 +196,8 @@ class ListImplTest {
 
     @Test
     void addAllShouldAddAllToSpecifiedPosition() {
-        ListImpl list = new ListImpl();
-        ListImpl list2 = new ListImpl();
+        List<Integer> list = new ListImpl<>();
+        List<Integer> list2 = new ListImpl<>();
         list.add(1);
         list.add(1);
         list.add(2);
@@ -216,9 +216,9 @@ class ListImplTest {
     }
 
     @Test
-    void removeAll() {
-        ListImpl list = new ListImpl();
-        ListImpl list2 = new ListImpl();
+    void removeAllShouldDeleteAllElementsThatEualsOne() {
+        List<Integer> list = new ListImpl<>();
+        List<Integer> list2 = new ListImpl<>();
         list.add(1);
         list.add(1);
         list.add(2);
@@ -234,9 +234,9 @@ class ListImplTest {
     }
 
     @Test
-    void retainAll() {
-        ListImpl list = new ListImpl();
-        ListImpl list2 = new ListImpl();
+    void retainAllShouldSafeAllElementsThatEqualsOne() {
+        List<Integer> list = new ListImpl<>();
+        List<Integer> list2 = new ListImpl<>();
         list.add(1);
         list.add(1);
         list.add(2);
@@ -252,7 +252,7 @@ class ListImplTest {
     }
 
     @Test
-    void clear() {
+    void clearShouldClearList() {
         List<Integer> list = new ListImpl<>();
         list.add(1);
         list.add(1);
@@ -266,7 +266,7 @@ class ListImplTest {
     }
 
     @Test
-    void set(){
+    void setSholdReplaceTheElementWithIndexOne(){
         List<Integer> list = new ListImpl<>();
         list.add(1);
         list.add(2);
