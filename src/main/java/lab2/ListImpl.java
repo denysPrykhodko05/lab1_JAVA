@@ -400,6 +400,10 @@ public class ListImpl<E> implements List<E> {
             this.size = size();
         }
 
+        /**
+         * check if iterator has next element
+         * @return true if operator has next element, otherwise false
+         */
         @Override
         public boolean hasNext() {
             while (currentIndex < size) {
@@ -412,6 +416,10 @@ public class ListImpl<E> implements List<E> {
             return result;
         }
 
+        /**
+         * return next element in iterator
+         * @return return next element in iterator
+         */
         @Override
         public E next() {
             if (!hasNext()) {
@@ -421,6 +429,9 @@ public class ListImpl<E> implements List<E> {
             return innerArray[currentIndex++];
         }
 
+        /**
+         * remove current element from iterator
+         */
         @Override
         public void remove() {
             E temp = next();
