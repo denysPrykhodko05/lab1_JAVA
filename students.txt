@@ -1,2 +1,2 @@
-{"name":"Denys","group":"KIUKI_17_2","averageMark":87.0}
-{"name":"Ivan","group":"KIUKI_17_3","averageMark":76.0}
+{"name":"Denys","group":"KIUKI_17_2","averageMark":67.0}
+{"name":"Ivan","group":"KIUKI_17_3","averageMark":90.0}

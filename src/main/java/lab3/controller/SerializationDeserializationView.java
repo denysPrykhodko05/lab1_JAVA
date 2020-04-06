@@ -14,9 +14,9 @@ import lab3.command.impl.ReadStudentCommand;
 import lab3.util.ConsoleReader;
 import org.apache.log4j.Logger;
 
-public class FillFile {
+public class SerializationDeserializationView {
 
-    private static final Logger LOGGER = Logger.getLogger(FillFile.class);
+    private static final Logger LOGGER = Logger.getLogger(SerializationDeserializationView.class);
     private static final Map<Integer, Command> commands = new HashMap<>();
 
     public static void main(String[] args) {
